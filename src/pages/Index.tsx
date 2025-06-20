@@ -14,11 +14,13 @@ import {
   Trophy, 
   CheckCircle,
   ArrowRight,
-  Download,
   Clock,
   Target,
   Users,
-  TrendingUp
+  TrendingUp,
+  Warehouse,
+  Globe,
+  Zap
 } from 'lucide-react';
 
 const Index = () => {
@@ -150,11 +152,11 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-slate-800 to-blue-800">
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
         <div 
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-40"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
@@ -162,43 +164,50 @@ const Index = () => {
         
         <div className="container mx-auto px-6 relative z-10 text-center text-white animate-fade-in">
           <div className="flex justify-center mb-6">
-            <Badge variant="secondary" className="px-4 py-2 text-lg bg-yellow-400 text-blue-900 font-semibold">
-              🏭 Logistics Excellence Project
+            <Badge variant="secondary" className="px-6 py-3 text-lg bg-yellow-400 text-blue-900 font-semibold shadow-lg">
+              <Warehouse className="w-5 h-5 mr-2" />
+              Logistics Excellence Project
             </Badge>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent animate-scale-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-200 to-white bg-clip-text text-transparent animate-scale-in">
             Warehouse Process Optimization
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            Transforming logistics operations at <span className="text-yellow-400 font-semibold">SJL Maghreb Tanger</span> through data-driven optimization and innovative process improvement
+          <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            Transforming logistics operations at <span className="text-yellow-400 font-semibold">SJL Maghreb Tanger</span> through data-driven optimization and innovative process improvement methodologies
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <Button 
               size="lg" 
-              className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl"
               onClick={() => scrollToSection('overview')}
             >
-              Explore Project <ArrowRight className="ml-2 w-5 h-5" />
+              <Globe className="mr-2 w-5 h-5" />
+              Explore Project 
+              <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-full transition-all duration-300 hover:scale-105"
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-4 rounded-full transition-all duration-300 hover:scale-105"
             >
-              <Download className="mr-2 w-5 h-5" /> Download Report
+              <Zap className="mr-2 w-5 h-5" /> 
+              View Methodology
             </Button>
           </div>
-          <div className="mt-12 text-sm opacity-75">
-            <p>Final Year Project by <span className="text-yellow-400">Cherief Douae</span> | Supervised by <span className="text-yellow-400">Mr. Tadi Soufian</span></p>
+          <div className="mt-16 text-sm opacity-80">
+            <p>Final Year Project by <span className="text-yellow-400 font-semibold">Cherief Douae</span> | Supervised by <span className="text-yellow-400 font-semibold">Mr. Tadi Soufian</span></p>
           </div>
         </div>
 
-        {/* Floating logistics icons */}
-        <div className="absolute top-20 left-10 text-yellow-400/20 animate-bounce" style={{ animationDelay: '1s' }}>
-          <Truck className="w-16 h-16" />
+        {/* Enhanced floating logistics icons */}
+        <div className="absolute top-20 left-10 text-yellow-400/30 animate-bounce" style={{ animationDelay: '1s' }}>
+          <Truck className="w-20 h-20 animate-float" />
         </div>
-        <div className="absolute bottom-20 right-10 text-yellow-400/20 animate-bounce" style={{ animationDelay: '2s' }}>
-          <Package className="w-12 h-12" />
+        <div className="absolute bottom-20 right-10 text-yellow-400/30 animate-bounce" style={{ animationDelay: '2s' }}>
+          <Package className="w-16 h-16 animate-float" />
+        </div>
+        <div className="absolute top-1/2 left-5 text-yellow-400/20 animate-bounce" style={{ animationDelay: '3s' }}>
+          <Warehouse className="w-14 h-14 animate-float" />
         </div>
       </section>
 
@@ -217,10 +226,10 @@ const Index = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                     activeSection === item.id 
-                      ? 'bg-blue-900 text-white shadow-lg' 
-                      : 'text-blue-900 hover:bg-blue-100'
+                      ? 'bg-blue-900 text-white shadow-lg scale-105' 
+                      : 'text-blue-900 hover:bg-blue-100 hover:scale-105'
                   }`}
                 >
                   {item.label}
@@ -253,7 +262,7 @@ const Index = () => {
                 <strong className="text-blue-900"> Ishikawa diagrams</strong> and <strong className="text-blue-900">QQQQCCP analysis</strong>.
               </p>
 
-              <div className="bg-gradient-to-r from-blue-50 to-yellow-50 p-6 rounded-xl">
+              <div className="bg-gradient-to-r from-blue-50 to-yellow-50 p-6 rounded-xl border-l-4 border-yellow-400">
                 <h3 className="font-semibold text-blue-900 mb-4 flex items-center">
                   <Truck className="w-5 h-5 mr-2" />
                   Key Challenges Addressed:
@@ -280,13 +289,13 @@ const Index = () => {
             </div>
             
             <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <div className="relative">
+              <div className="relative group">
                 <img 
-                  src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Modern Warehouse Operations" 
-                  className="rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105"
+                  src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Professional Warehouse Operations" 
+                  className="rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
           </div>
@@ -305,14 +314,14 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card 
                 key={index}
-                className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-white/80 backdrop-blur animate-fade-in"
+                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg bg-white/90 backdrop-blur animate-fade-in overflow-hidden"
                 style={{ animationDelay: feature.delay }}
               >
                 <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-900 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-900 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 shadow-lg">
                     {feature.icon}
                   </div>
-                  <CardTitle className="text-blue-900 group-hover:text-blue-700 transition-colors">
+                  <CardTitle className="text-blue-900 group-hover:text-blue-700 transition-colors text-xl">
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
@@ -337,17 +346,17 @@ const Index = () => {
             {methodologySteps.map((step, index) => (
               <div 
                 key={index}
-                className="flex items-start gap-6 p-8 bg-gradient-to-r from-white to-blue-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 animate-fade-in"
+                className="flex items-start gap-6 p-8 bg-gradient-to-r from-white to-blue-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fade-in group"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-blue-900 font-bold text-xl shadow-lg">
+                  <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-blue-900 font-bold text-xl shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     {step.number}
                   </div>
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="text-blue-900">{step.icon}</div>
+                    <div className="text-blue-900 group-hover:scale-110 transition-transform duration-300">{step.icon}</div>
                     <h3 className="text-2xl font-bold text-blue-900">{step.title}</h3>
                   </div>
                   <p className="text-gray-700 leading-relaxed">{step.description}</p>
@@ -359,8 +368,15 @@ const Index = () => {
       </section>
 
       {/* Results Section */}
-      <section id="results" className="py-20 bg-gradient-to-br from-blue-900 to-slate-800 text-white">
-        <div className="container mx-auto px-6">
+      <section id="results" className="py-20 bg-gradient-to-br from-blue-900 to-slate-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+            alt="Logistics Background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Outstanding Results</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto rounded"></div>
@@ -370,14 +386,14 @@ const Index = () => {
             {results.map((result, index) => (
               <Card 
                 key={index}
-                className="bg-white/10 backdrop-blur border-white/20 text-center hover:bg-white/20 transition-all duration-500 hover:scale-105 animate-fade-in"
+                className="bg-white/10 backdrop-blur border-white/20 text-center hover:bg-white/20 transition-all duration-500 hover:scale-110 hover:-translate-y-2 animate-fade-in group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-8">
-                  <div className="text-yellow-400 mb-4 flex justify-center">
+                  <div className="text-yellow-400 mb-4 flex justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
                     {result.icon}
                   </div>
-                  <div className="text-4xl font-bold text-yellow-400 mb-2">{result.metric}</div>
+                  <div className="text-4xl font-bold text-yellow-400 mb-2 group-hover:scale-110 transition-transform duration-300">{result.metric}</div>
                   <h3 className="text-lg font-semibold mb-2">{result.label}</h3>
                   <p className="text-white/80 text-sm">{result.description}</p>
                 </CardContent>
@@ -414,26 +430,32 @@ const Index = () => {
                   <Button 
                     size="lg" 
                     className="bg-blue-900 hover:bg-blue-800 px-8 py-4 rounded-full transition-all duration-300 hover:scale-105"
+                    onClick={() => scrollToSection('overview')}
                   >
-                    <Download className="mr-2 w-5 h-5" /> 
-                    Download Full Report
+                    <RefreshCw className="mr-2 w-5 h-5" /> 
+                    Review Project
                   </Button>
                   <Button 
                     size="lg" 
                     variant="outline" 
                     className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white px-8 py-4 rounded-full transition-all duration-300"
+                    onClick={() => scrollToSection('methodology')}
                   >
-                    View Case Study
+                    <Target className="mr-2 w-5 h-5" />
+                    View Methodology
                   </Button>
                 </div>
               </div>
               
               <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <img 
-                  src="https://images.unsplash.com/photo-1559028006-448665bd7c7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Logistics Team Success" 
-                  className="rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105"
-                />
+                <div className="relative group">
+                  <img 
+                    src="https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    alt="Professional Logistics Team" 
+                    className="rounded-2xl shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -441,13 +463,14 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-blue-900 to-slate-800 text-white py-12">
+      <footer className="bg-gradient-to-r from-blue-900 to-slate-800 text-white py-12 relative">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400"></div>
         <div className="container mx-auto px-6">
           <div className="text-center">
             <div className="flex justify-center items-center gap-4 mb-6">
-              <Truck className="w-8 h-8 text-yellow-400" />
+              <Truck className="w-8 h-8 text-yellow-400 animate-bounce" />
               <h3 className="text-2xl font-bold">Warehouse Optimization Project</h3>
-              <Package className="w-8 h-8 text-yellow-400" />
+              <Package className="w-8 h-8 text-yellow-400 animate-bounce" style={{ animationDelay: '0.5s' }} />
             </div>
             
             <Separator className="bg-white/20 mb-6" />
@@ -469,7 +492,7 @@ const Index = () => {
             
             <div className="mt-8 pt-6 border-t border-white/20">
               <p className="text-sm text-white/70">
-                © 2024 Warehouse Process Optimization Project. Transforming logistics through innovation.
+                © 2024 Warehouse Process Optimization Project. Transforming logistics through innovation and excellence.
               </p>
             </div>
           </div>
